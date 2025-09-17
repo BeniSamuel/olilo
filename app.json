@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Olilo",
+    "slug": "olilo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/splash/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F88C2D"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/splash/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/splash/favicon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}

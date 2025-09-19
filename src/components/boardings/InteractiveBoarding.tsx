@@ -3,18 +3,21 @@ import React, { useState } from "react";
 import TopBar from "./TopBar";
 import dimensions from "../../theme/dimension.theme";
 import { bg_colors, text } from "../../theme/color.theme";
+import ContinueButton from "./ContinueButton";
 
 type Props = {
   question: string;
   options: string[];
+  handleNext: () => void;
+  handleBack: () => void
 };
 
-const InteractiveBoarding = ({ question, options }: Props) => {
+const InteractiveBoarding = ({ question, options, handleNext, handleBack }: Props) => {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
     <View style={styles.container}>
-      <TopBar />
+      <TopBar handleBack={handleBack}/>
       <View style={styles.question_container}>
         <Image
           source={require("../../../assets/boarding/oli_icon.png")}
@@ -46,6 +49,7 @@ const InteractiveBoarding = ({ question, options }: Props) => {
           );
         })}
       </View>
+      <ContinueButton handleNext={handleNext}/>
     </View>
   );
 };
@@ -59,15 +63,15 @@ const styles = StyleSheet.create({
     width: dimensions.width,
     display: "flex",
     flexDirection: "column",
-    gap: 20
-    
+    gap: 20,
+    justifyContent: "space-between",
   },
   question: {
     marginBottom: 20,
     textAlign: "justify",
     fontFamily: "montserrat-medium",
     lineHeight: 25,
-    color: text.color
+    color: text.color,
   },
   optionsContainer: {
     marginTop: 10,
@@ -107,6 +111,6 @@ const styles = StyleSheet.create({
     paddingVertical: dimensions.height * 0.025,
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: "#D9D9D9"
-  }
+    borderColor: "#D9D9D9",
+  },
 });

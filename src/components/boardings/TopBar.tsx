@@ -2,46 +2,40 @@ import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
 import dimensions from "../../theme/dimension.theme";
 import { bg_colors } from "../../theme/color.theme";
+import { useBoardingStore } from "../../store/boarding_store/boarding.store";
+import boarding_data from "../../data/boarding/boarding.data";
 
-const TopBar = () => {
+type TopBarProp = {
+    handleBack: () => void;
+}
+
+const TopBar: React.FC<TopBarProp> = ({handleBack}) => {
+  const { section } = useBoardingStore();
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
-        <Image source={require("../../../assets/common/back-icon.png")} resizeMode="contain"/>
+      <TouchableOpacity onPress={handleBack}>
+        <Image
+          source={require("../../../assets/common/back-icon.png")}
+          resizeMode="contain"
+        />
       </TouchableOpacity>
+
       <View style={styles.status_bar_container}>
-        <View
-          style={{
-            backgroundColor: bg_colors.button_bg_inactive,
-            width: 55,
-            height: 4,
-            borderRadius: 12,
-          }}
-        />
-        <View
-          style={{
-            backgroundColor: bg_colors.button_bg_inactive,
-            width: 55,
-            height: 4,
-            borderRadius: 12,
-          }}
-        />
-        <View
-          style={{
-            backgroundColor: bg_colors.button_bg_inactive,
-            width: 55,
-            height: 4,
-            borderRadius: 12,
-          }}
-        />
-        <View
-          style={{
-            backgroundColor: bg_colors.button_bg_inactive,
-            width: 55,
-            height: 4,
-            borderRadius: 12,
-          }}
-        />
+        {boarding_data.map((_, idx) => (
+          <View
+            key={idx}
+            style={{
+              backgroundColor:
+                section >= idx
+                  ? bg_colors.button_bg_active
+                  : bg_colors.button_bg_inactive,
+              width: 55,
+              height: 4,
+              borderRadius: 12,
+            }}
+          />
+        ))}
       </View>
     </View>
   );

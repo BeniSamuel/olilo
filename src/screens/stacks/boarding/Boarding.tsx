@@ -30,6 +30,7 @@ const Boarding = () => {
     return (
       <InteractiveBoarding
         {...item}
+        id={item.id}
         handleNext={handleNext}
         handleBack={handleBack}
         style={styles.page}

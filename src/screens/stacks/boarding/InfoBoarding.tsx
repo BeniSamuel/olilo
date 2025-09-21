@@ -42,13 +42,14 @@ export default InfoBoarding;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? dimensions.height * 0.15 : null,
+    paddingVertical: dimensions.height * 0.15,
     backgroundColor: bg_colors.main_bg,
     flex: 1,
     paddingHorizontal: dimensions.width * 0.045,
     paddingBottom: 12,
     display: "flex",
     gap: dimensions.height * 0.1,
+    justifyContent: "space-between"
   },
   greeting_container: {
     backgroundColor: "white",

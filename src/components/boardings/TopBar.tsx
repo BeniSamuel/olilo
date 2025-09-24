@@ -4,6 +4,7 @@ import dimensions from "../../theme/dimension.theme";
 import { bg_colors } from "../../theme/color.theme";
 import { useBoardingStore } from "../../store/boarding_store/boarding.store";
 import boarding_data from "../../data/boarding/boarding.data";
+import { StatusBar } from "expo-status-bar";
 
 type TopBarProp = {
     handleBack: () => void;
@@ -14,6 +15,7 @@ const TopBar: React.FC<TopBarProp> = ({handleBack}) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar />
       <TouchableOpacity onPress={handleBack}>
         <Image
           source={require("../../../assets/common/back-icon.png")}
@@ -58,3 +60,4 @@ const styles = StyleSheet.create({
     gap: 6,
   },
 });
+

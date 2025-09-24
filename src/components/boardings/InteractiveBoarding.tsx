@@ -55,6 +55,13 @@ const InteractiveBoarding = ({
                 style={[
                   styles.optionBtn,
                   isSelected && styles.optionBtnSelected,
+                  {
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    paddingHorizontal: dimensions.width * 0.045,
+                    paddingVertical: dimensions.height * 0.025
+                  }
                 ]}
                 onPress={() => setSelected(opt)}
               >
@@ -70,7 +77,7 @@ const InteractiveBoarding = ({
                   style={[
                     styles.optionText,
                     isSelected && styles.optionTextSelected,
-                    { color: text.color }
+                    { color: text.color, fontFamily: "montserrat-medium" }
                   ]}
                 >
                   {opt.status}
@@ -97,7 +104,7 @@ const InteractiveBoarding = ({
           );
         })}
       </View>
-      <ContinueButton handleNext={handleNext} />
+      <ContinueButton handleNext={handleNext} text={ id === 4 ? "Get Started" : "Continue" }/>
     </View>
   );
 };

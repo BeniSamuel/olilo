@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import TabLayout from '../../../layout/TabLayout'
 
 const Home = () => {
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <TabLayout>
+      <View>
+        <Text>Hi</Text>
+      </View>
+    </TabLayout>
   )
 }
 

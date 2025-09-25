@@ -28,7 +28,7 @@ const boarding_data = [
     question: "Why are you using \n Olilo?",
     options: [
       {
-        country: "To review books i read",
+        country: "To review books I read",
         icon: require("../../../assets/boarding/book_icon.png"),
       },
       {

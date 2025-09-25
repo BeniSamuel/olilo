@@ -6,6 +6,7 @@ import Loading from "../screens/stacks/loading/Loading";
 import TabNavigation from "./TabNavigation";
 import Boarding from "../screens/stacks/boarding/Boarding";
 import InfoBoarding from "../screens/stacks/boarding/InfoBoarding";
+import Status from "../screens/stacks/status/Status";
 
 const Stack = createStackNavigator();
 
@@ -18,7 +19,8 @@ const StackNavigation = () => {
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Otp" component={Otp} />
       <Stack.Screen name="Loading" component={Loading} />
-      <Stack.Screen name="Home" component={TabNavigation} />
+      <Stack.Screen name="Tabs" component={TabNavigation} />
+      <Stack.Screen name="Status" component={Status} />
     </Stack.Navigator>
   );
 };

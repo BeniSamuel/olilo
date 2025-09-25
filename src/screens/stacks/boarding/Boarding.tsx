@@ -5,17 +5,21 @@ import dimensions from "../../../theme/dimension.theme";
 import boarding_data from "../../../data/boarding/boarding.data";
 import InteractiveBoarding from "../../../components/boardings/InteractiveBoarding";
 import { useBoardingStore } from "../../../store/boarding_store/boarding.store";
+import { useNavigation } from "@react-navigation/native";
 
 const { width, height } = Dimensions.get("window");
 
 const Boarding = () => {
   const flatListRef = useRef<FlatList>(null);
   let { section, setSection } = useBoardingStore();
+  const navigation = useNavigation();
 
   const handleNext = () => {
-    if (section < boarding_data.length - 1) {
+    if (section < boarding_data.length - 1 && section !== 4) {
       flatListRef.current?.scrollToIndex({ index: section + 1, animated: true });
       setSection(section + 1);
+    } else {
+      navigation.navigate("Status")
     }
   };
 

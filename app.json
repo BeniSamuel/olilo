@@ -18,7 +18,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/splash/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#F88C2D"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false

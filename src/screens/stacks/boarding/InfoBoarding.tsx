@@ -10,11 +10,13 @@ import React from "react";
 import dimensions from "../../../theme/dimension.theme";
 import { bg_colors, text } from "../../../theme/color.theme";
 import { useNavigation } from "@react-navigation/native";
+import { StatusBar } from "expo-status-bar";
 
 const InfoBoarding = () => {
     const navigation = useNavigation();
   return (
     <View style={styles.container}>
+      <StatusBar />
       <View style={styles.greeting_container}>
         <Text style={styles.greeting_text}>Hi there , I'm Oli!</Text>
       </View>

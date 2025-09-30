@@ -56,7 +56,7 @@ const TabNavigator = () => {
           return (
             <Image
               source={icon}
-              style={{ width: size, height: size }}
+              style={{ width: 16, height: 16 }}
               resizeMode="contain"
             />
           );

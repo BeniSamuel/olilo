@@ -1,11 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import TabLayout from '../../../layout/TabLayout'
+import UserProfile from '../../../components/account/UserProfile'
+import FollowingStats from '../../../components/account/FollowingStats'
 
 const Account = () => {
   return (
-    <View>
-      <Text>Account</Text>
-    </View>
+    <TabLayout tab_name='Account'>
+      <View>
+        <UserProfile />
+        <FollowingStats />
+      </View>
+    </TabLayout>
   )
 }
 

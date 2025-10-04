@@ -49,8 +49,6 @@ const TabNavigator = () => {
               icon = focused
                 ? require("../../assets/common/account-active-icon.png")
                 : require("../../assets/common/account-inactive-icon.png");
-            default:
-              icon = require("../../assets/common/account-inactive-icon.png");
           }
 
           return (

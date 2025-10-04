@@ -7,14 +7,16 @@ import ProgressTracker from "../../../components/home/ProgressTracker";
 import { TouchableOpacity } from "react-native";
 import TodayChallenge from "../../../components/home/TodayChallenge";
 import Journey from "../../../components/home/Journey";
+import { useNavigation } from "@react-navigation/native";
 
 const user = {
   name: "Beni",
 };
 
 const Home = () => {
+  const navigation = useNavigation();
   return (
-    <TabLayout>
+    <TabLayout tab_name="home">
       <View style={styles.textContainer}>
         <Text style={styles.user_container}>Hi {user.name} 👋</Text>
         <View style={styles.streak_details}>
@@ -28,8 +30,17 @@ const Home = () => {
       </View>
 
       <View style={styles.button_container}>
-        <TouchableOpacity style={styles.button}>
-          <Image source={require("../../../../assets/home/button_add_icon.png")} resizeMode="contain" style={styles.button_image}/>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            navigation.navigate("Creation");
+          }}
+        >
+          <Image
+            source={require("../../../../assets/home/button_add_icon.png")}
+            resizeMode="contain"
+            style={styles.button_image}
+          />
           <Text style={styles.button_text}>Add a Review</Text>
         </TouchableOpacity>
       </View>
@@ -70,7 +81,7 @@ const styles = StyleSheet.create({
     color: text.color,
   },
   progress_tracker: {
-    paddingHorizontal: dimensions.width * 0.03
+    paddingHorizontal: dimensions.width * 0.03,
   },
   button: {
     display: "flex",
@@ -80,18 +91,18 @@ const styles = StyleSheet.create({
     backgroundColor: bg_colors.button_bg_active,
     paddingVertical: dimensions.height * 0.012,
     borderRadius: 20,
-    alignItems: "center"
+    alignItems: "center",
   },
   button_container: {
     paddingVertical: dimensions.height * 0.035,
-    paddingHorizontal: dimensions.width * 0.03
+    paddingHorizontal: dimensions.width * 0.03,
   },
   button_image: {
     width: 18,
-    height: 18
+    height: 18,
   },
   button_text: {
     fontFamily: "montserrat-medium",
-    color: text.button_text
-  }
+    color: text.button_text,
+  },
 });

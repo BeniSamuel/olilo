@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from "react-native";
 import React, { useState } from "react";
 import TopBar from "./TopBar";
 import dimensions from "../../theme/dimension.theme";
@@ -36,7 +36,7 @@ const InteractiveBoarding = ({
         </View>
       </View>
 
-      <View style={[styles.optionsContainer, id === 3 && styles.slide_three]}>
+      <ScrollView showsVerticalScrollIndicator={false} style={[styles.optionsContainer, id === 3 && styles.slide_three]}>
         {options.map((opt, idx) => {
           const isSelected = selected === opt;
           if (id === 3) {
@@ -103,7 +103,7 @@ const InteractiveBoarding = ({
             </TouchableOpacity>
           );
         })}
-      </View>
+      </ScrollView>
       <ContinueButton handleNext={handleNext} text={ id === 4 ? "Get Started" : "Continue" }/>
     </View>
   );

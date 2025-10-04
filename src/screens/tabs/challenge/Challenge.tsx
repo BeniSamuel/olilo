@@ -1,14 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import TabLayout from "../../../layout/TabLayout";
+import Option from "../../../components/challenge/Option";
+import useChallengeStore from "../../../store/challenge_store/challenge.store";
+import Target from "../../../components/challenge/Target";
+import Badges from "../../../components/challenge/Badges";
 
 const Challenge = () => {
+  const { focused } = useChallengeStore();
   return (
-    <View>
-      <Text>Challenge</Text>
-    </View>
-  )
-}
+    <TabLayout tab_name="Challenge">
+      <Option />
 
-export default Challenge
+      <View>{focused === "target" ? <Target /> : <Badges />}</View>
+    </TabLayout>
+  );
+};
 
-const styles = StyleSheet.create({})
+export default Challenge;
+
+const styles = StyleSheet.create({});

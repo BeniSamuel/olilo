@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   optionText: {
-    fontSize: 15,
+    // fontSize: 15,
     textAlign: "justify",
     fontFamily: "montserrat-semibold",
     color: "#333",

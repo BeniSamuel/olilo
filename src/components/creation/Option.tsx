@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   },
   button: {
     paddingVertical: dimensions.height * 0.015,
-    paddingHorizontal: dimensions.width * 0.15,
+    paddingHorizontal: dimensions.width * 0.13,
     borderRadius: 20,
     display: "flex",
     flexDirection: "column",

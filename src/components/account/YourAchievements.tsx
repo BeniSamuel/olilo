@@ -1,14 +1,46 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import statistics from "../../data/statistics/statistics.data";
+import StatisticCard from "./StatisticCard";
+import dimensions from "../../theme/dimension.theme";
 
 const YourAchievements = () => {
   return (
-    <View>
-      <Text>YourAchievements</Text>
+    <View style={styles.container}>
+      <View>
+        <Text style={styles.title_header}>2 Achievements</Text>
+      </View>
+
+      <View style={styles.achievements_container}>
+        {statistics.map((statistic) => (
+          <StatisticCard
+            key={statistic.id}
+            icon={statistic.icon}
+            title={statistic.title}
+            description={statistic.description}
+          />
+        ))}
+      </View>
     </View>
-  )
-}
+  );
+};
 
-export default YourAchievements
+export default YourAchievements;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: dimensions.width * 0.035,
+    paddingVertical: dimensions.height * 0.02,
+    display: "flex",
+    flexDirection: "column",
+    gap: 20
+  },
+  title_header: {
+    fontFamily: "montserrat-semibold"
+  },
+  achievements_container: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 12
+  }
+});

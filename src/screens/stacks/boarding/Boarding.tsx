@@ -11,7 +11,7 @@ const { width, height } = Dimensions.get("window");
 
 const Boarding = () => {
   const flatListRef = useRef<FlatList>(null);
-  let { section, setSection } = useBoardingStore();
+  let { section, setSection, logout } = useBoardingStore();
   const navigation = useNavigation();
 
   const handleNext = () => {
@@ -20,6 +20,7 @@ const Boarding = () => {
       setSection(section + 1);
     } else {
       navigation.navigate("Status")
+      logout();
     }
   };
 

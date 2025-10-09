@@ -12,6 +12,7 @@ type Props = {
   options: string[];
   handleNext: () => void;
   handleBack: () => void;
+  style: {}
 };
 
 const InteractiveBoarding = ({

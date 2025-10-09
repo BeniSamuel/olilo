@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
   },
   subject: {
     fontFamily: "montserrat-medium",
-    color: text.color
+    color: text.color,
+    lineHeight: 25
   },
   content_container: {
     display: "flex",

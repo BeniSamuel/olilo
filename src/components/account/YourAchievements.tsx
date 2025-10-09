@@ -3,6 +3,7 @@ import React from "react";
 import statistics from "../../data/statistics/statistics.data";
 import StatisticCard from "./StatisticCard";
 import dimensions from "../../theme/dimension.theme";
+import { bg_colors } from "../../theme/color.theme";
 
 const YourAchievements = () => {
   return (
@@ -33,7 +34,10 @@ const styles = StyleSheet.create({
     paddingVertical: dimensions.height * 0.02,
     display: "flex",
     flexDirection: "column",
-    gap: 20
+    gap: 25,
+    borderWidth: 2,
+    borderColor: bg_colors.gray_color,
+    borderRadius: 12
   },
   title_header: {
     fontFamily: "montserrat-semibold"
@@ -41,6 +45,6 @@ const styles = StyleSheet.create({
   achievements_container: {
     display: "flex",
     flexDirection: "column",
-    gap: 12
+    gap: 25
   }
 });

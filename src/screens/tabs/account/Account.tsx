@@ -1,16 +1,16 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import TabLayout from '../../../layout/TabLayout'
-import UserProfile from '../../../components/account/UserProfile'
-import FollowingStats from '../../../components/account/FollowingStats'
-import { bg_colors, text } from '../../../theme/color.theme'
-import dimensions from '../../../theme/dimension.theme'
-import YourStatistics from '../../../components/account/YourStatistics'
-import YourAchievements from '../../../components/account/YourAchievements'
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React from "react";
+import TabLayout from "../../../layout/TabLayout";
+import UserProfile from "../../../components/account/UserProfile";
+import FollowingStats from "../../../components/account/FollowingStats";
+import { bg_colors, text } from "../../../theme/color.theme";
+import dimensions from "../../../theme/dimension.theme";
+import YourStatistics from "../../../components/account/YourStatistics";
+import YourAchievements from "../../../components/account/YourAchievements";
 
 const Account = () => {
   return (
-    <TabLayout tab_name='Account'>
+    <TabLayout tab_name="Account">
       <View>
         <UserProfile />
         <FollowingStats />
@@ -22,21 +22,25 @@ const Account = () => {
         </TouchableOpacity>
       </View>
 
-      <View>
-        <YourStatistics />
-        <YourAchievements />
+      <View style={styles.statistic_container}>
+        <View>
+          <YourStatistics />
+        </View>
+
+        <View style={styles.achievement_container}>
+          <YourAchievements />
+        </View>
       </View>
-
     </TabLayout>
-  )
-}
+  );
+};
 
-export default Account
+export default Account;
 
 const styles = StyleSheet.create({
   button_container: {
     paddingHorizontal: dimensions.width * 0.035,
-    paddingVertical: dimensions.height * 0.025
+    paddingVertical: dimensions.height * 0.025,
   },
   edit_button: {
     backgroundColor: bg_colors.button_bg_active,
@@ -45,10 +49,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: dimensions.height * 0.015,
-    borderRadius: 20
+    borderRadius: 20,
   },
   button_text: {
     color: text.button_text,
-    fontFamily: "montserrat-medium"
+    fontFamily: "montserrat-medium",
+  },
+  achievement_container: {
+    paddingHorizontal: dimensions.width * 0.035,
+  },
+  statistic_container: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 20,
+    paddingVertical: dimensions.height * 0.01
   }
-})
+});

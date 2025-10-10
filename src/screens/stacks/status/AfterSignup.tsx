@@ -1,57 +1,54 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import dimensions from "../../../theme/dimension.theme";
-import { bg_colors, text } from "../../../theme/color.theme";
+import { bg_colors, shadows, text } from "../../../theme/color.theme";
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 
-const Status = () => {
+const AfterSignup = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <View style={styles.greeting_container}>
-        <Text style={styles.greeting_text}>Awesome!</Text>
-      </View>
-      <View style={styles.description_container}>
-        <Image
-          source={require("../../../../assets/status/oli_icon_happy.png")}
-          resizeMode="contain"
-        />
-        <View style={styles.text_container}>
-          <Text style={styles.description_text}>
-            Create a profile now so you can save {"\n"}
-            progress and connect with friends {"\n"}
-            Or you can skip it.
-          </Text>
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: dimensions.height * 0.1,
+        }}
+      >
+        <View style={styles.greeting_container}>
+          <Text style={styles.greeting_text}>Great!!</Text>
+        </View>
+        <View style={styles.description_container}>
+          <Image
+            source={require("../../../../assets/status/oli_jumping.png")}
+            resizeMode="contain"
+            style={styles.image_icon}
+          />
+          <View style={styles.text_container}>
+            <Text style={styles.header}>Welcome 👋</Text>
+            <Text style={styles.description_text}>
+              Your profile has been created {"\n"}
+              successfully. {"\n"}
+            </Text>
+          </View>
         </View>
       </View>
+
       <View style={styles.button_container}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Signup")}
+          onPress={() => navigation.navigate("Tabs")}
         >
-          <Text style={styles.button_text}>CREATE PROFILE</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[
-            styles.button,
-            { backgroundColor: bg_colors.button_bg_inactive },
-          ]}
-          onPress={() => navigation.navigate("Signin")}
-        >
-          <Text
-            style={[styles.button_text, { color: bg_colors.button_bg_active }]}
-          >
-            SKIP
-          </Text>
+          <Text style={styles.button_text}>CONTINUE TO HOME</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default Status;
+export default AfterSignup;
 
 const styles = StyleSheet.create({
   container: {
@@ -122,5 +119,14 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     gap: 12,
+  },
+  image_icon: {
+    // height: 300,
+    // width: 300,
+  },
+  header: {
+    color: bg_colors.button_bg_active,
+    fontFamily: "montserrat-bold",
+    fontSize: 20,
   },
 });

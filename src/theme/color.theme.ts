@@ -11,3 +11,7 @@ export const text = {
   headers: "#000000",
   button_text: "#ffffff",
 };
+
+export const shadows = {
+  onboarding_container_shadow: "rgba(0, 0, 0, 0.25)"
+}

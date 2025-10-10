@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { text } from "../../theme/color.theme";
 import dimensions from "../../theme/dimension.theme";
+import { useNavigation } from "@react-navigation/native";
 
 type BookCardProp = {
   name: string;
@@ -10,6 +11,7 @@ type BookCardProp = {
 };
 
 const BookCard: React.FC<BookCardProp> = (props) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.book_indicators}>
@@ -17,7 +19,7 @@ const BookCard: React.FC<BookCardProp> = (props) => {
           <Image source={require("../../../assets/home/book_review.png")} resizeMode="contain" style={{width: 25 , height: 25 }}/>
         </View>
         <View>
-          <Text style={styles.book_name}>{props.name}</Text>
+          <Text style={styles.book_name} onPress={() => navigation.navigate("Review")}>{props.name}</Text>
         </View>
       </View>
       <View>

@@ -28,6 +28,8 @@ const Boarding = () => {
   if (section > 0) {
     flatListRef.current?.scrollToIndex({ index: section - 1, animated: true });
     setSection(section - 1);
+  } else {
+    navigation.goBack()
   }
 };
 

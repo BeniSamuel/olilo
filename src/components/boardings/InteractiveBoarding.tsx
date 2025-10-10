@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import TopBar from "./TopBar";
 import dimensions from "../../theme/dimension.theme";
@@ -12,7 +19,6 @@ type Props = {
   options: string[];
   handleNext: () => void;
   handleBack: () => void;
-  style: {}
 };
 
 const InteractiveBoarding = ({
@@ -37,7 +43,10 @@ const InteractiveBoarding = ({
         </View>
       </View>
 
-      <ScrollView showsVerticalScrollIndicator={false} style={[styles.optionsContainer, id === 3 && styles.slide_three]}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={[styles.optionsContainer, id === 3 && styles.slide_three]}
+      >
         {options.map((opt, idx) => {
           const isSelected = selected === opt;
           if (id === 3) {
@@ -61,8 +70,8 @@ const InteractiveBoarding = ({
                     flexDirection: "row",
                     justifyContent: "space-between",
                     paddingHorizontal: dimensions.width * 0.045,
-                    paddingVertical: dimensions.height * 0.025
-                  }
+                    paddingVertical: dimensions.height * 0.025,
+                  },
                 ]}
                 onPress={() => setSelected(opt)}
               >
@@ -78,7 +87,7 @@ const InteractiveBoarding = ({
                   style={[
                     styles.optionText,
                     isSelected && styles.optionTextSelected,
-                    { color: text.color, fontFamily: "montserrat-medium" }
+                    { color: text.color, fontFamily: "montserrat-medium" },
                   ]}
                 >
                   {opt.status}
@@ -105,7 +114,10 @@ const InteractiveBoarding = ({
           );
         })}
       </ScrollView>
-      <ContinueButton handleNext={handleNext} text={ id === 4 ? "Get Started" : "Continue" }/>
+      <ContinueButton
+        handleNext={handleNext}
+        text={id === 4 ? "Get Started" : "Continue"}
+      />
     </View>
   );
 };

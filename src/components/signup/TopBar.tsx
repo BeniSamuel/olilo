@@ -5,23 +5,27 @@ import signup_data from "../../data/signup/signup.data";
 import useSignupStoreType from "../../store/signup_store/signup.store";
 import { bg_colors } from "../../theme/color.theme";
 
-const TopBar = () => {
+interface TopBarProp {
+  handleBack: () => void;
+}
+
+const TopBar: React.FC<TopBarProp> = ({handleBack}) => {
   const { section } = useSignupStoreType();
   return (
     <View style={styles.container}>
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleBack}>
           <Image source={require("../../../assets/common/back-icon.png")} />
         </TouchableOpacity>
       </View>
 
       <View style={styles.status_bar_container}>
-        {signup_data.map((data) => (
+        {signup_data.map((data, idx) => (
           <View
             key={data.id}
             style={{
               backgroundColor:
-                section >= data.id
+                section >= idx
                   ? bg_colors.button_bg_active
                   : bg_colors.button_bg_inactive,
               width: 55,

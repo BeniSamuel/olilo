@@ -3,7 +3,9 @@ export const bg_colors = {
   button_bg_active: "#F88C2D",
   button_bg_inactive: "rgba(121, 117, 113, 0.09)",
   gray_color: "#D9D9D9",
-  reduced_orange: "rgba(248, 140, 45, 0.15)"
+  reduced_orange: "rgba(248, 140, 45, 0.15)",
+  pink_color: "#8A38F5",
+  green_color: "#3CA8A4"
 };
 
 export const text = {

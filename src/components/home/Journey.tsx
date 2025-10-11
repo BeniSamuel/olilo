@@ -3,19 +3,15 @@ import React from "react";
 import dimensions from "../../theme/dimension.theme";
 import books from "../../data/books/book.data";
 import BookCard from "./BookCard";
+import { Book } from "../../types/book.type";
 
 const Journey = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Your Reading Journey</Text>
       <View style={styles.book_container}>
-        {books.map((book) => (
-          <BookCard
-            key={book.id}
-            name={book.name}
-            status_description={book.status_description}
-            status={book.status}
-          />
+        {books.map((book: Book) => (
+          <BookCard key={book.id} {...book} />
         ))}
       </View>
     </View>

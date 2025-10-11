@@ -3,27 +3,45 @@ import React from "react";
 import { text } from "../../theme/color.theme";
 import dimensions from "../../theme/dimension.theme";
 import { useNavigation } from "@react-navigation/native";
+import { Book } from "../../types/book.type";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-type BookCardProp = {
-  name: string;
-  status_description: string;
-  status: string;
+type RootStackParamList = {
+  Review: { book: Book };
 };
 
-const BookCard: React.FC<BookCardProp> = (props) => {
-  const navigation = useNavigation();
+type BookCardProp = Book;
+
+const BookCard: React.FC<BookCardProp> = (book) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
       <View style={styles.book_indicators}>
         <View>
-          <Image source={require("../../../assets/home/book_review.png")} resizeMode="contain" style={{width: 25 , height: 25 }}/>
+          <Image
+            source={require("../../../assets/home/book_review.png")}
+            resizeMode="contain"
+            style={{ width: 25, height: 25 }}
+          />
         </View>
         <View>
-          <Text style={styles.book_name} onPress={() => navigation.navigate("Review")}>{props.name}</Text>
+          <Text
+            style={styles.book_name}
+            onPress={() => navigation.navigate("Review", { book })}
+          >
+            {book.name}
+          </Text>
         </View>
       </View>
       <View>
-        <Text style={[styles.book_status_description, {color: props.status === "done" ? "#53BE15" : "#FFCA28"}]}>{props.status_description}</Text>
+        <Text
+          style={[
+            styles.book_status_description,
+            { color: book.status === "done" ? "#53BE15" : "#FFCA28" },
+          ]}
+        >
+          {book.status_description}
+        </Text>
       </View>
     </View>
   );
@@ -41,19 +59,19 @@ const styles = StyleSheet.create({
     paddingVertical: dimensions.height * 0.02,
     paddingHorizontal: dimensions.width * 0.025,
     borderRadius: 15,
-    elevation: 0.6
+    elevation: 0.6,
   },
   book_indicators: {
     display: "flex",
     flexDirection: "row",
     gap: 10,
-    alignItems: "center"
+    alignItems: "center",
   },
   book_name: {
     fontFamily: "montserrat-medium",
     color: text.color,
   },
   book_status_description: {
-    fontFamily: "montserrat-semibold"
-  }
+    fontFamily: "montserrat-semibold",
+  },
 });

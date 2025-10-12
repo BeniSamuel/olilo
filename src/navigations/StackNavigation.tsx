@@ -10,6 +10,7 @@ import Status from "../screens/stacks/status/Status";
 import AfterSignup from "../screens/stacks/status/AfterSignup";
 import Review from "../screens/stacks/review/Review";
 import AfterReview from "../screens/stacks/status/AfterReview";
+import ForgotPassword from "../screens/stacks/forgot-password/ForgotPassword";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ const StackNavigation = () => {
       <Stack.Screen name="AfterSignup" component={AfterSignup} />
       <Stack.Screen name="Review" component={Review}/>
       <Stack.Screen name="AfterReview" component={AfterReview} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
     </Stack.Navigator>
   );
 };

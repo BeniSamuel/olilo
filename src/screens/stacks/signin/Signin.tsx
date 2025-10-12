@@ -51,9 +51,9 @@ const Signin = () => {
         </View>
       </View>
 
-      <View style={styles.options}>
+      <TouchableOpacity style={styles.options} onPress={() => navigation.navigate("ForgotPassword")}>
         <Text style={styles.forgot_password}>Forgot password?</Text>
-      </View>
+      </TouchableOpacity>
 
       <View>
         <Button button_text={"SIGN IN"} handlePress={handleSubmitForm} />

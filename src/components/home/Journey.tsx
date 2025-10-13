@@ -25,14 +25,14 @@ const styles = StyleSheet.create({
     paddingVertical: dimensions.height * 0.035,
     display: "flex",
     flexDirection: "column",
-    gap: 15
+    gap: 15,
   },
   book_container: {
     display: "flex",
     flexDirection: "column",
-    gap: 15
+    gap: 15,
   },
   header: {
-    fontFamily: "montserrat-bold"
-  }
+    fontFamily: "montserrat-bold",
+  },
 });

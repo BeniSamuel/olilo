@@ -28,18 +28,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: dimensions.width * 0.04
+    paddingHorizontal: dimensions.width * 0.04,
   },
   text_container: {
     display: "flex",
     flexDirection: "column",
-    gap: 12
+    gap: 12,
   },
   header: {
-    fontFamily: "montserrat-bold"
+    fontFamily: "montserrat-bold",
   },
   subject: {
     fontFamily: "montserrat-medium",
-    color: text.color
-  }
+    color: text.color,
+  },
 });

@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "montserrat-medium",
-    color: text.button_text
-  }
+    color: text.button_text,
+  },
 });

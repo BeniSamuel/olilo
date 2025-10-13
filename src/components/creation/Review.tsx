@@ -10,7 +10,10 @@ const Review = () => {
       <View style={styles.input}>
         <View style={styles.input_field}>
           <Image source={require("../../../assets/creation/book.png")} />
-          <TextInput placeholder="Choose or enter book" style={styles.text_input}/>
+          <TextInput
+            placeholder="Choose or enter book"
+            style={styles.text_input}
+          />
         </View>
         <Image source={require("../../../assets/creation/search.png")} />
       </View>
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     paddingHorizontal: dimensions.width * 0.035,
-    paddingVertical: dimensions.height * 0.025
+    paddingVertical: dimensions.height * 0.025,
   },
   input: {
     display: "flex",
@@ -40,7 +43,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: dimensions.width * 0.03,
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: bg_colors.gray_color
+    borderColor: bg_colors.gray_color,
   },
   input_field: {
     display: "flex",
@@ -50,6 +53,6 @@ const styles = StyleSheet.create({
   },
   text_input: {
     fontFamily: "montserrat-medium",
-    color: text.color
-  }
+    color: text.color,
+  },
 });

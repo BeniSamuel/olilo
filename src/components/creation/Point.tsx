@@ -12,7 +12,9 @@ const Point = () => {
       <View>
         <TouchableOpacity style={styles.button}>
           <Image source={require("../../../assets/creation/add.png")} />
-          <Text style={{ fontFamily: "montserrat-medium"}}>Add another lesson</Text>
+          <Text style={{ fontFamily: "montserrat-medium" }}>
+            Add another lesson
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
     paddingVertical: dimensions.height * 0.025,
     display: "flex",
     flexDirection: "column",
-    gap: 20
+    gap: 20,
   },
   header: {
     fontFamily: "montserrat-semibold",

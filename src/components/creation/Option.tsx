@@ -5,7 +5,7 @@ import { bg_colors, text } from "../../theme/color.theme";
 import useOptionStore from "../../store/creation_store/option.store";
 
 const Option = () => {
-  const {focused, setFocused} = useOptionStore();
+  const { focused, setFocused } = useOptionStore();
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -43,7 +43,8 @@ const Option = () => {
         style={[
           styles.button,
           {
-            borderColor: focused !== "challenge" ? bg_colors.button_bg_active : "",
+            borderColor:
+              focused !== "challenge" ? bg_colors.button_bg_active : "",
             borderWidth: focused !== "challenge" ? 2 : 0,
             backgroundColor:
               focused === "challenge"

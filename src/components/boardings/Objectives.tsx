@@ -42,17 +42,17 @@ const styles = StyleSheet.create({
   inform: {
     display: "flex",
     flexDirection: "column",
-    gap: 8
+    gap: 8,
   },
   topic_style: {
     fontFamily: "montserrat-semibold",
     textAlign: "justify",
-    lineHeight: 25
+    lineHeight: 25,
   },
   subject_style: {
     fontFamily: "montserrat-medium",
     color: text.color,
     lineHeight: 25,
-    textAlign: "justify"
-  }
+    textAlign: "justify",
+  },
 });

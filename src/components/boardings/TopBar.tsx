@@ -7,10 +7,10 @@ import boarding_data from "../../data/boarding/boarding.data";
 import { StatusBar } from "expo-status-bar";
 
 type TopBarProp = {
-    handleBack: () => void;
-}
+  handleBack: () => void;
+};
 
-const TopBar: React.FC<TopBarProp> = ({handleBack}) => {
+const TopBar: React.FC<TopBarProp> = ({ handleBack }) => {
   const { section } = useBoardingStore();
 
   return (
@@ -60,4 +60,3 @@ const styles = StyleSheet.create({
     gap: 6,
   },
 });
-

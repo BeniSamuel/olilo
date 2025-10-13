@@ -43,16 +43,16 @@ const styles = StyleSheet.create({
     width: 65,
   },
   title_header: {
-    fontFamily: "montserrat-semibold"
+    fontFamily: "montserrat-semibold",
   },
   subject: {
     fontFamily: "montserrat-medium",
     color: text.color,
-    lineHeight: 25
+    lineHeight: 25,
   },
   content_container: {
     display: "flex",
     flexDirection: "column",
-    gap: 6
-  }
+    gap: 6,
+  },
 });

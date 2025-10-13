@@ -1,21 +1,24 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import achievements from '../../data/achievements/achievements.data'
-import AchievementCard from './AchievementCard'
-import dimensions from '../../theme/dimension.theme'
+import { Image, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import achievements from "../../data/achievements/achievements.data";
+import AchievementCard from "./AchievementCard";
+import dimensions from "../../theme/dimension.theme";
 
 const YourStatistics = () => {
   // Group achievements by pairs [odd, even]
-  const groupedAchievements = []
+  const groupedAchievements = [];
   for (let i = 0; i < achievements.length; i += 2) {
-    groupedAchievements.push(achievements.slice(i, i + 2))
+    groupedAchievements.push(achievements.slice(i, i + 2));
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.header_section}>
         <Text style={styles.header_title}>Your Statistics</Text>
-        <Image source={require("../../../assets/account/stats.png")} style={styles.header_image}/>
+        <Image
+          source={require("../../../assets/account/stats.png")}
+          style={styles.header_image}
+        />
       </View>
 
       {/* Loop through grouped achievements */}
@@ -41,10 +44,10 @@ const YourStatistics = () => {
         ))}
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default YourStatistics
+export default YourStatistics;
 
 const styles = StyleSheet.create({
   container: {
@@ -82,4 +85,4 @@ const styles = StyleSheet.create({
   rightCard: {
     alignSelf: "flex-end",
   },
-})
+});

@@ -37,14 +37,14 @@ const styles = StyleSheet.create({
     gap: 25,
     borderWidth: 2,
     borderColor: bg_colors.gray_color,
-    borderRadius: 12
+    borderRadius: 12,
   },
   title_header: {
-    fontFamily: "montserrat-semibold"
+    fontFamily: "montserrat-semibold",
   },
   achievements_container: {
     display: "flex",
     flexDirection: "column",
-    gap: 25
-  }
+    gap: 25,
+  },
 });

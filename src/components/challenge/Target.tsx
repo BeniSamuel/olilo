@@ -39,5 +39,5 @@ const styles = StyleSheet.create({
     gap: 30,
     paddingVertical: dimensions.height * 0.035,
     // backgroundColor: "green"
-  }
+  },
 });

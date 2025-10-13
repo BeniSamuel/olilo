@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
   container_data: {
     display: "flex",
     flexDirection: "column",
-    gap: 20
-  }
+    gap: 20,
+  },
 });

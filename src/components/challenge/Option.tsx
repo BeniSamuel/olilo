@@ -5,7 +5,7 @@ import { bg_colors, text } from "../../theme/color.theme";
 import useChallengeStore from "../../store/challenge_store/challenge.store";
 
 const Option = () => {
-  const {focused, setFocused} = useChallengeStore();
+  const { focused, setFocused } = useChallengeStore();
   return (
     <View style={styles.container}>
       <TouchableOpacity

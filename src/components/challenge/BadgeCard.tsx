@@ -54,6 +54,6 @@ const styles = StyleSheet.create({
   description: {
     display: "flex",
     flexDirection: "column",
-    gap: 8
-  }
+    gap: 8,
+  },
 });

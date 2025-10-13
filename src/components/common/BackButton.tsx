@@ -4,7 +4,7 @@ import dimensions from "../../theme/dimension.theme";
 
 type BackButtonProp = {
   handleBack: () => void;
-}
+};
 
 const BackButton: React.FC<BackButtonProp> = ({ handleBack }) => {
   return (

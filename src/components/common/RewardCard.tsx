@@ -69,6 +69,6 @@ const styles = StyleSheet.create({
     color: text.button_text,
   },
   reward_count_value: {
-    fontFamily: "montserrat-medium"
-  }
+    fontFamily: "montserrat-medium",
+  },
 });

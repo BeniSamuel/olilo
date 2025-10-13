@@ -12,7 +12,10 @@ const BottomBarTop: React.FC<BottomBarTopProp> = ({ bar_name }) => {
     <View style={styles.container}>
       <StatusBar style="dark" />
       <View style={styles.tab_info}>
-        <Image source={require("../../../assets/common/oli.png")} resizeMode="contain"/>
+        <Image
+          source={require("../../../assets/common/oli.png")}
+          resizeMode="contain"
+        />
         <Text style={styles.bar_name}>{bar_name}</Text>
       </View>
       <View></View>
@@ -39,6 +42,6 @@ const styles = StyleSheet.create({
   },
   bar_name: {
     fontFamily: "montserrat-semibold",
-    fontSize: 15
+    fontSize: 15,
   },
 });

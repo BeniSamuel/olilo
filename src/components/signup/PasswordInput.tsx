@@ -53,11 +53,11 @@ const styles = StyleSheet.create({
   input_container: {
     borderBottomWidth: 2,
     borderBottomColor: bg_colors.gray_color,
-    position: "relative"
+    position: "relative",
   },
   eye_button: {
     position: "absolute",
     bottom: 15,
-    right: 10
+    right: 10,
   },
 });

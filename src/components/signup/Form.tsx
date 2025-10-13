@@ -34,7 +34,9 @@ const Form: React.FC<FormPropType> = (props) => {
           style={styles.button_continue}
           onPress={props.handleNext}
         >
-          <Text style={styles.button_text}>{section === 3 ? "Register" : "Continue"}</Text>
+          <Text style={styles.button_text}>
+            {section === 3 ? "Register" : "Continue"}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

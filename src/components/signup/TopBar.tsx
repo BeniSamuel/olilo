@@ -9,7 +9,7 @@ interface TopBarProp {
   handleBack: () => void;
 }
 
-const TopBar: React.FC<TopBarProp> = ({handleBack}) => {
+const TopBar: React.FC<TopBarProp> = ({ handleBack }) => {
   const { section } = useSignupStoreType();
   return (
     <View style={styles.container}>

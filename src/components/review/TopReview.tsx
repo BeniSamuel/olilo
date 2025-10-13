@@ -7,7 +7,7 @@ import useReviewStore from "../../store/review_store/review.store";
 
 type TopReviewProp = {
   handleBack: () => void;
-}
+};
 
 const TopReview: React.FC<TopReviewProp> = ({ handleBack }) => {
   const { section } = useReviewStore();
@@ -35,7 +35,7 @@ const TopReview: React.FC<TopReviewProp> = ({ handleBack }) => {
       </View>
 
       <View style={styles.diamond_container}>
-        <Image source={require("../../../assets/review/diamond.png")}/>
+        <Image source={require("../../../assets/review/diamond.png")} />
         <Text style={styles.diamond_collected}>100</Text>
       </View>
     </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: dimensions.height * 0.025
+    paddingVertical: dimensions.height * 0.025,
   },
   status_bar_container: {
     display: "flex",
@@ -62,9 +62,9 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    gap: 6
+    gap: 6,
   },
   diamond_collected: {
-    fontFamily: "montserrat-medium"
-  }
+    fontFamily: "montserrat-medium",
+  },
 });

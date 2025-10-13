@@ -18,14 +18,14 @@ const ReviewContainer: React.FC<ReviewContainerProps> = ({
   keyPoint,
   bookName,
   handleNext,
-  handleBack
+  handleBack,
 }) => {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
 
       <View>
-        <TopReview handleBack={handleBack}/>
+        <TopReview handleBack={handleBack} />
 
         <ReviewBox keyPoint={keyPoint} bookName={bookName} />
       </View>

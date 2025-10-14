@@ -3,8 +3,11 @@ import React from "react";
 import { bg_colors, text } from "../../../theme/color.theme";
 import dimensions from "../../../theme/dimension.theme";
 import RewardCard from "../../../components/common/RewardCard";
+import { useNavigation } from "@react-navigation/native";
 
 const AfterReview = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.review_icon_container}>
@@ -26,7 +29,7 @@ const AfterReview = () => {
         </View>
       </View>
       <View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Tabs")}>
           <Text style={styles.button_text}>Continue</Text>
         </TouchableOpacity>
       </View>

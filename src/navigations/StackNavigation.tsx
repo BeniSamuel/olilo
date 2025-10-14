@@ -11,6 +11,9 @@ import AfterSignup from "../screens/stacks/status/AfterSignup";
 import Review from "../screens/stacks/review/Review";
 import AfterReview from "../screens/stacks/status/AfterReview";
 import ForgotPassword from "../screens/stacks/forgot-password/ForgotPassword";
+import PasswordCreation from "../screens/stacks/password-creation/PasswordCreation";
+import Challenge from "../screens/stacks/challenge/Challenge";
+import ChallengeStack from "../screens/stacks/challenge/Challenge";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +32,8 @@ const StackNavigation = () => {
       <Stack.Screen name="Review" component={Review}/>
       <Stack.Screen name="AfterReview" component={AfterReview} />
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Stack.Screen name="PasswordCreation" component={PasswordCreation} />
+      <Stack.Screen name="ChallengeStack" component={ChallengeStack} />
     </Stack.Navigator>
   );
 };

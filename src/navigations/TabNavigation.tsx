@@ -21,7 +21,7 @@ const TabNavigator = () => {
         },
         tabBarLabelStyle: { fontFamily: "montserrat-medium" },
         tabBarActiveTintColor: bg_colors.button_bg_active,
-        tabBarIcon: ({ focused, size }) => {
+        tabBarIcon: ({ focused }) => {
           let icon;
 
           switch (route.name) {

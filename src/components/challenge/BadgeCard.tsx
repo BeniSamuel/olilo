@@ -2,6 +2,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import dimensions from "../../theme/dimension.theme";
 import { bg_colors, text } from "../../theme/color.theme";
+import { useNavigation } from "@react-navigation/native";
+import challenges from "../../data/challenge/challenge.data";
 
 type BadgesCardProp = {
   title: string;
@@ -9,6 +11,7 @@ type BadgesCardProp = {
 };
 
 const BadgeCard: React.FC<BadgesCardProp> = (props) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View>
@@ -25,7 +28,7 @@ const BadgeCard: React.FC<BadgesCardProp> = (props) => {
         </Text>
       </View>
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ChallengeStack", {challenges})}>
           <Image source={require("../../../assets/challenge/direct.png")} />
         </TouchableOpacity>
       </View>

@@ -44,10 +44,10 @@ const ChallengeStack: React.FC<ChallengeStackParams> = ({ route }) => {
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={renderItem}
-           onMomentumScrollEnd={(ev) => {
-          const index = Math.round(ev.nativeEvent.contentOffset.x / width);
-          setSection(index);
-        }}
+          onMomentumScrollEnd={(ev) => {
+            const index = Math.round(ev.nativeEvent.contentOffset.x / width);
+            setSection(index);
+          }}
         />
       </View>
     </View>

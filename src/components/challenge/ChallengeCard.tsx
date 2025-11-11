@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+import React, { useState } from "react";
 import { Challenges } from "../../types/challenge.type";
 import { TouchableOpacity } from "react-native";
 import useChallengeStore from "../../store/challenge_store/challenge.store";
@@ -10,16 +10,32 @@ type ChallengeCardProp = Challenges;
 
 const ChallengeCard: React.FC<ChallengeCardProp> = (challenge) => {
   const { section, setSection } = useChallengeStore();
+  const [active, setActive] = useState<boolean>(false);
   return (
     <View style={styles.container}>
-      <View>
-        <View>
-          <Text>{challenge.questions[section].category}</Text>
-          <Text>{challenge.title}</Text>
+      <View style={styles.content_styles}>
+        <View style={styles.heading_container}>
+          <Text style={styles.category_text_style}>{challenge.questions[section].category}</Text>
+          <Text style={styles.title_text_style}>{challenge.title}</Text>
         </View>
-        <View>
-          <TouchableOpacity></TouchableOpacity>
-          <Text>{challenge.questions[section].problem}</Text>
+        <View style={styles.question_container}>
+          <TouchableOpacity
+            onPress={() => {
+              setActive(!active);
+            }}
+          >
+            <Image
+              source={
+                active
+                  ? require("../../../assets/review/voice_active.png")
+                  : require("../../../assets/review/voice_inactive.png")
+              }
+              style={styles.image_size}
+            />
+          </TouchableOpacity>
+          <Text style={styles.question_text}>
+            {challenge.questions[section].problem}
+          </Text>
         </View>
       </View>
       <View>
@@ -43,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: dimensions.width * 0.93,
     flex: 1,
-    height: dimensions.height * 0.9
+    height: dimensions.height * 0.9,
   },
   button: {
     backgroundColor: bg_colors.button_bg_active,
@@ -52,10 +68,43 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   button_text: {
     color: text.button_text,
+    fontFamily: "montserrat-semibold",
+  },
+  content_styles: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 25,
+  },
+  question_container: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+  question_text: {
+    fontFamily: "montserrat-medium",
+    lineHeight: 25
+  },
+  image_size: {
+    width: 28,
+    height: 28,
+  },
+  category_text_style: {
     fontFamily: "montserrat-semibold"
+  },
+  title_text_style: {
+    fontFamily:"montserrat-semibold"
+  },
+  heading_container: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+    borderBottomWidth: 2,
+    borderBottomColor: bg_colors.button_bg_inactive,
+    paddingBottom: dimensions.height * 0.025
   }
 });

@@ -22,14 +22,32 @@ const AfterReview = () => {
       </View>
 
       <View style={styles.reward_container}>
-        <RewardCard reward_description={"Diamonds"} color={bg_colors.button_bg_active} reward_count={0} width={dimensions.width * 0.93} />
+        <RewardCard
+          reward_description={"Diamonds"}
+          color={bg_colors.button_bg_active}
+          reward_count={0}
+          width={dimensions.width * 0.93}
+        />
         <View style={styles.reward_container_2}>
-            <RewardCard reward_description={"Total XP"} color={bg_colors.pink_color} reward_count={0} width={dimensions.width * 0.43} />
-            <RewardCard reward_description={"Time"} color={bg_colors.green_color} reward_count={0} width={dimensions.width * 0.43} />
+          <RewardCard
+            reward_description={"Total XP"}
+            color={bg_colors.pink_color}
+            reward_count={0}
+            width={dimensions.width * 0.43}
+          />
+          <RewardCard
+            reward_description={"Time"}
+            color={bg_colors.green_color}
+            reward_count={0}
+            width={dimensions.width * 0.43}
+          />
         </View>
       </View>
       <View>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Tabs")}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Tabs")}
+        >
           <Text style={styles.button_text}>Continue</Text>
         </TouchableOpacity>
       </View>
@@ -52,13 +70,13 @@ const styles = StyleSheet.create({
   reward_container: {
     display: "flex",
     flexDirection: "column",
-    gap: 10
+    gap: 10,
   },
   reward_container_2: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
   },
   button: {
     backgroundColor: bg_colors.button_bg_active,
@@ -67,22 +85,22 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 25
+    borderRadius: 25,
   },
   button_text: {
     color: text.button_text,
-    fontFamily: "montserrat-medium"
+    fontFamily: "montserrat-medium",
   },
   review_icon_container: {
     display: "flex",
     flexDirection: "column",
-    alignItems: 'center',
+    alignItems: "center",
     justifyContent: "center",
-    paddingTop: dimensions.height * 0.045
+    paddingTop: dimensions.height * 0.045,
   },
   review_text: {
     fontFamily: "montserrat-bold",
     color: bg_colors.button_bg_active,
-    fontSize: 18
-  }
+    fontSize: 18,
+  },
 });

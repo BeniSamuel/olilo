@@ -1,21 +1,27 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import React, { useState } from "react";
 import { Challenges } from "../../types/challenge.type";
 import { TouchableOpacity } from "react-native";
 import useChallengeStore from "../../store/challenge_store/challenge.store";
 import dimensions from "../../theme/dimension.theme";
 import { bg_colors, text } from "../../theme/color.theme";
+import AnswersBox from "./AnswersBox";
 
 type ChallengeCardProp = Challenges;
 
 const ChallengeCard: React.FC<ChallengeCardProp> = (challenge) => {
   const { section, setSection } = useChallengeStore();
   const [active, setActive] = useState<boolean>(false);
+
+  const currentQuestion = challenge.questions[section];
+
   return (
     <View style={styles.container}>
       <View style={styles.content_styles}>
         <View style={styles.heading_container}>
-          <Text style={styles.category_text_style}>{challenge.questions[section].category}</Text>
+          <Text style={styles.category_text_style}>
+            {challenge.questions[section].category}
+          </Text>
           <Text style={styles.title_text_style}>{challenge.title}</Text>
         </View>
         <View style={styles.question_container}>
@@ -34,12 +40,14 @@ const ChallengeCard: React.FC<ChallengeCardProp> = (challenge) => {
             />
           </TouchableOpacity>
           <Text style={styles.question_text}>
-            {challenge.questions[section].problem}
+            {currentQuestion.problem}
           </Text>
         </View>
       </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <AnswersBox answers={currentQuestion.options} />
+      </ScrollView>
       <View>
-        <View></View>
         <View>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.button_text}>Check Answer</Text>
@@ -87,24 +95,24 @@ const styles = StyleSheet.create({
   },
   question_text: {
     fontFamily: "montserrat-medium",
-    lineHeight: 25
+    lineHeight: 25,
   },
   image_size: {
     width: 28,
     height: 28,
   },
   category_text_style: {
-    fontFamily: "montserrat-semibold"
+    fontFamily: "montserrat-semibold",
   },
   title_text_style: {
-    fontFamily:"montserrat-semibold"
+    fontFamily: "montserrat-semibold",
   },
   heading_container: {
     display: "flex",
     flexDirection: "column",
     gap: 10,
-    borderBottomWidth: 2,
-    borderBottomColor: bg_colors.button_bg_inactive,
-    paddingBottom: dimensions.height * 0.025
-  }
+    borderBottomWidth: 1,
+    borderBottomColor: bg_colors.gray_color,
+    paddingBottom: dimensions.height * 0.025,
+  },
 });
